@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class ImagenActivity extends AppCompatActivity {
 
+
     ImageView imageView;
 
     Button btnCargar, btnVolver;
@@ -29,7 +30,7 @@ public class ImagenActivity extends AppCompatActivity {
         btnVolver = findViewById(R.id.btnVolver);
 
         btnCargar.setOnClickListener((view) -> {
-            cargarImagenEnHiloSecundario(btnCargar);
+            cargarImagenEnHiloSecundario();
         });
 
         btnVolver.setOnClickListener((view) -> {
@@ -37,6 +38,7 @@ public class ImagenActivity extends AppCompatActivity {
         });
     }
 
+    // Metodo para cargar una imagen desde una URL
     private Bitmap loadImageFromNetwork(String urlString) {
         try {
             java.net.URL url = new java.net.URL(urlString);
@@ -49,7 +51,8 @@ public class ImagenActivity extends AppCompatActivity {
     }
 
 
-    public void cargarImagenEnHiloSecundario(View view) {
+    // Metodo para cargar la imagen en un hilo secundario y actualizar la UI en el hilo principal
+    public void cargarImagenEnHiloSecundario() {
         new Thread(() -> {
             final Bitmap bitmap = loadImageFromNetwork("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Phoenix_A_compared_to_Ton_618_and_the_Orbit_of_Neptune.jpg/250px-Phoenix_A_compared_to_Ton_618_and_the_Orbit_of_Neptune.jpg");
             imageView.post(() -> {

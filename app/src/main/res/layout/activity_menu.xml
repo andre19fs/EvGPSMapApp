@@ -30,13 +30,25 @@
         app:layout_constraintHorizontal_bias="0.5" />
 
     <Button
-        android:id="@+id/btnImagen"
+    android:id="@+id/btnImagen"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="Descarlga una imagen"
+    android:layout_marginTop="24dp"
+    android:contentDescription="Botón opción uno"
+    app:layout_constraintTop_toBottomOf="@id/btnMapa"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5" />
+
+    <Button
+        android:id="@+id/btnCaptura"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Descarlga una imagen"
+        android:text="Toma una foto"
         android:layout_marginTop="24dp"
         android:contentDescription="Botón opción uno"
-        app:layout_constraintTop_toBottomOf="@id/btnMapa"
+        app:layout_constraintTop_toBottomOf="@id/btnImagen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5" />

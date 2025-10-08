@@ -22,6 +22,7 @@ public class MenuActivity extends AppCompatActivity {
         btnMapa = findViewById(R.id.btnMapa);
         btnImagen = findViewById(R.id.btnImagen);
 
+        //agregamos los listeners a los botones para abrir las actividades
         btnMapa.setOnClickListener(v -> {
             Intent intent = new Intent(MenuActivity.this, MainActivity.class);
             startActivity(intent);
